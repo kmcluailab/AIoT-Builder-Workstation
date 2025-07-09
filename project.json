@@ -1,0 +1,38 @@
+{
+  "project": {
+    "name": "AI–IoT Builder Workstation",
+    "description": "A responsive single-page web application presenting the AI–IoT Builder Workstation developed around the NVIDIA Jetson Nano. Designed to demonstrate real-world AI integration with sensors, machine learning, and real-time data pipelines for educational purposes.",
+    "version": "1.0.0",
+    "author": {
+      "name": "Akash Gupta",
+      "github": "https://github.com/saysky2",
+      "linkedin": "https://www.linkedin.com/in/saysky2"
+    },
+    "files": [
+      "index.html",
+      "Khwaja_Moinuddin_Chishti_Language_University_logo.png",
+      "project.json",
+      "README.md"
+    ],
+    "features": [
+      "Jetson Nano–based AIoT education platform",
+      "Integrated AI curriculum and structured assignments",
+      "Sensor-based smart applications and cloud connectivity",
+      "Modern responsive design and clean UI",
+      "No external libraries — pure HTML, CSS, and JS"
+    ],
+    "technologies": [
+      "HTML5",
+      "CSS3",
+      "Vanilla JavaScript"
+    ],
+    "hosting": {
+      "recommended": [
+        "GitHub Pages",
+        "Netlify",
+        "Vercel"
+      ]
+    },
+    "license": "MIT"
+  }
+}
