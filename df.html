@@ -1,0 +1,359 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Innovation - AIoT Builder Workstation</title>
+  <link rel="icon" type="image/png" href="Khwaja_Moinuddin_Chishti_Language_University_logo.png" />
+  <style>
+    :root {
+      --bg-color: #f5f7fa;
+      --text-color: #333;
+      --header-bg: #283593;
+      --main-bg: #fff;
+      --accent-color: #1a237e;
+      --border-color: #ddd;
+      --shadow-color: rgba(0,0,0,0.2);
+    }
+
+    [data-theme="dark"] {
+      --bg-color: #1a1a1a;
+      --text-color: #e0e0e0;
+      --header-bg: #1e1e2e;
+      --main-bg: #2d2d2d;
+      --accent-color: #64b5f6;
+      --border-color: #444;
+      --shadow-color: rgba(0,0,0,0.5);
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--bg-color);
+      margin: 0;
+      color: var(--text-color);
+      transition: all 0.3s ease;
+    }
+
+    .controls {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 1000;
+      display: flex;
+      gap: 10px;
+    }
+
+    .control-btn {
+      background-color: white;
+      color: black;
+      border: 2px solid #ccc;
+      padding: 10px 20px;
+      border-radius: 12px;
+      cursor: pointer;
+      font-size: 14px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+
+    .control-btn:hover {
+      background-color: #f5f5f5;
+      border-color: #aaa;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    }
+
+    .language-select {
+      background-color: white;
+      color: black;
+      border: 2px solid #ccc;
+      padding: 10px 20px;
+      border-radius: 12px;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 500;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+    }
+
+    header {
+      background-color: var(--header-bg);
+      color: white;
+      padding: 20px 20px 20px 100px;
+      text-align: center;
+      position: relative;
+      animation: slideInDown 1s ease;
+    }
+
+    header img.logo {
+      position: absolute;
+      top: 10px;
+      left: 20px;
+      height: 80px;
+    }
+
+    main {
+      max-width: 1200px;
+      margin: auto;
+      padding: 2em;
+      background-color: var(--main-bg);
+      animation: fadeIn 1.5s ease-in;
+    }
+
+    h2 {
+      color: var(--accent-color);
+      margin-top: 40px;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    li {
+      margin-bottom: 10px;
+    }
+
+    .fade-in-img {
+      animation: fadeInImage 2s ease-in-out;
+    }
+
+    .lang-hidden {
+      display: none;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes slideInDown {
+      from { transform: translateY(-100%); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    @keyframes fadeInImage {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+    footer {
+  background-color: #1a237e; /* deep indigo */
+  color: white;
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+footer a {
+  color: #90caf9; /* light blue link */
+  text-decoration: none;
+  margin: 0 6px;
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: #bbdefb;
+  text-decoration: underline;
+}
+
+footer strong {
+  color: #ffffff;
+  font-weight: bold;
+}
+
+  </style>
+</head>
+<body>
+  <div class="controls">
+    <button class="control-btn" onclick="toggleTheme()">🌙 Dark</button>
+    <select class="language-select" onchange="changeLanguage(this.value)">
+      <option value="en">English</option>
+      <option value="hi">हिंदी</option>
+      <option value="ur">اردو</option>
+    </select>
+  </div>
+
+  <header>
+    <img src="Khwaja_Moinuddin_Chishti_Language_University_logo.png" alt="University Logo" class="logo">
+    <h1 data-lang="en">AI Innovation: AIoT Builder Workstation</h1>
+    <h1 data-lang="hi" class="lang-hidden">AI नवाचार: AIoT बिल्डर वर्कस्टेशन</h1>
+    <h1 data-lang="ur" class="lang-hidden">AI اختراع: AIoT بلڈر ورک اسٹیشن</h1>
+  </header>
+
+  <main>
+    <div style="text-align: center; margin-bottom: 30px;">
+      <img src="Iot-WorkStation.jpg" alt="AIoT Builder Image" class="fade-in-img" style="max-width: 90%; height: auto; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); border: 4px solid #ddd;">
+    </div>
+
+    <section>
+      <h2 data-lang="en">What is the AI–IoT Builder Workstation?</h2>
+      <h2 data-lang="hi" class="lang-hidden">AI–IoT बिल्डर वर्कस्टेशन क्या है?</h2>
+      <h2 data-lang="ur" class="lang-hidden">AI–IoT بلڈر ورک اسٹیشن کیا ہے؟</h2>
+      
+      <p data-lang="en">
+        The AI–IoT Builder Workstation is a powerful educational platform integrating Artificial Intelligence and Internet of Things. Built around the NVIDIA Jetson Nano, it offers students real-world experience in AI, sensor interfacing, and real-time data analysis.
+      </p>
+      <p data-lang="hi" class="lang-hidden">
+        AI–IoT बिल्डर वर्कस्टेशन एक शक्तिशाली शैक्षणिक प्लेटफॉर्म है जो कृत्रिम बुद्धिमत्ता और इंटरनेट ऑफ थिंग्स को एकीकृत करता है। NVIDIA Jetson Nano के आसपास निर्मित, यह छात्रों को AI, सेंसर इंटरफेसिंग और रीयल-टाइम डेटा विश्लेषण में वास्तविक-विश्व अनुभव प्रदान करता है।
+      </p>
+      <p data-lang="ur" class="lang-hidden">
+        AI–IoT بلڈر ورک اسٹیشن ایک طاقتور تعلیمی پلیٹ فارم ہے جو مصنوعی ذہانت اور انٹرنیٹ آف تھنگز کو یکجا کرتا ہے۔ NVIDIA Jetson Nano کے گرد بنایا گیا، یہ طلباء کو AI، سینسر انٹرفیسنگ، اور ریئل ٹائم ڈیٹا تجزیہ میں حقیقی دنیا کا تجربہ فراہم کرتا ہے۔
+      </p>
+    </section>
+
+    <section>
+      <h2 data-lang="en">Key Features</h2>
+      <h2 data-lang="hi" class="lang-hidden">मुख्य विशेषताएं</h2>
+      <h2 data-lang="ur" class="lang-hidden">اہم خصوصیات</h2>
+      
+      <ul data-lang="en">
+        <li>Full-stack learning modules for AI, ML, NLP, and sensors using Python, C++, and R</li>
+        <li>Real-time image processing & object detection with OpenCV & TensorFlow</li>
+        <li>Environmental sensors for simulating smart systems: Temp, Humidity, CO₂, O₂, Dust</li>
+        <li>Cloud integration with ThingSpeak for real-time monitoring</li>
+      </ul>
+      <ul data-lang="hi" class="lang-hidden">
+        <li>Python, C++, और R का उपयोग करके AI, ML, NLP, और सेंसर के लिए फुल-स्टैक लर्निंग मॉड्यूल</li>
+        <li>OpenCV और TensorFlow के साथ रीयल-टाइम इमेज प्रोसेसिंग और ऑब्जेक्ट डिटेक्शन</li>
+        <li>स्मार्ट सिस्टम का अनुकरण करने के लिए पर्यावरणीय सेंसर: तापमान, आर्द्रता, CO₂, O₂, धूल</li>
+        <li>रीयल-टाइम मॉनिटरिंग के लिए ThingSpeak के साथ क्लाउड एकीकरण</li>
+      </ul>
+      <ul data-lang="ur" class="lang-hidden">
+        <li>Python, C++, اور R استعمال کرتے ہوئے AI, ML, NLP, اور سینسرز کے لیے فل اسٹیک لرننگ ماڈیولز</li>
+        <li>OpenCV اور TensorFlow کے ساتھ ریئل ٹائم امیج پروسیسنگ اور آبجیکٹ ڈیٹیکشن</li>
+        <li>سمارٹ سسٹمز کی نقل کے لیے ماحولیاتی سینسرز: درجہ حرارت، نمی، CO₂, O₂, دھول</li>
+        <li>ریئل ٹائم مانیٹرنگ کے لیے ThingSpeak کے ساتھ کلاؤڈ انٹیگریشن</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2 data-lang="en">Hardware Specifications</h2>
+      <h2 data-lang="hi" class="lang-hidden">हार्डवेयर विनिर्देश</h2>
+      <h2 data-lang="ur" class="lang-hidden">ہارڈویئر کی تفصیلات</h2>
+      
+      <ul data-lang="en">
+        <li>128-core NVIDIA Maxwell GPU & Quad-core ARM Cortex-A57 CPU</li>
+        <li>4GB RAM, 240GB SSD, 15-inch LED Display</li>
+        <li>GPIO, I2C, SPI, UART interfaces for sensor/actuator expansion</li>
+        <li>Webcam & HD video support for vision projects</li>
+      </ul>
+      <ul data-lang="hi" class="lang-hidden">
+        <li>128-कोर NVIDIA Maxwell GPU और क्वाड-कोर ARM Cortex-A57 CPU</li>
+        <li>4GB RAM, 240GB SSD, 15-इंच LED डिस्प्ले</li>
+        <li>सेंसर/एक्चुएटर विस्तार के लिए GPIO, I2C, SPI, UART इंटरफेस</li>
+        <li>विजन प्रोजेक्ट्स के लिए वेबकैम और HD वीडियो समर्थन</li>
+      </ul>
+      <ul data-lang="ur" class="lang-hidden">
+        <li>128-کور NVIDIA Maxwell GPU اور کواڈ کور ARM Cortex-A57 CPU</li>
+        <li>4GB RAM, 240GB SSD, 15-انچ LED ڈسپلے</li>
+        <li>سینسر/ایکچویٹر توسیع کے لیے GPIO, I2C, SPI, UART انٹرفیسز</li>
+        <li>ویژن پروجیکٹس کے لیے ویب کیم اور HD ویڈیو سپورٹ</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2 data-lang="en">Hands-on Assignments</h2>
+      <h2 data-lang="hi" class="lang-hidden">व्यावहारिक असाइनमेंट</h2>
+      <h2 data-lang="ur" class="lang-hidden">عملی تفویضات</h2>
+      
+      <ul data-lang="en">
+        <li>20+ guided assignments including gesture, motion, emotion recognition</li>
+        <li>YOLO object detection and linear regression projects via Jupyter Notebooks</li>
+        <li>Focus on accuracy evaluation and reproducibility in AI research</li>
+      </ul>
+      <ul data-lang="hi" class="lang-hidden">
+        <li>इशारा, गति, भावना पहचान सहित 20+ निर्देशित असाइनमेंट</li>
+        <li>Jupyter Notebooks के माध्यम से YOLO ऑब्जेक्ट डिटेक्शन और लिनियर रिग्रेशन प्रोजेक्ट्स</li>
+        <li>AI अनुसंधान में सटीकता मूल्यांकन और पुनरुत्पादन पर ध्यान</li>
+      </ul>
+      <ul data-lang="ur" class="lang-hidden">
+        <li>اشارہ، حرکت، جذبات کی شناخت سمیت 20+ ہدایت یافتہ تفویضات</li>
+        <li>Jupyter Notebooks کے ذریعے YOLO آبجیکٹ ڈیٹیکشن اور لینیئر ریگریشن پروجیکٹس</li>
+        <li>AI ریسرچ میں درستگی کی تشخیص اور دوبارہ پیدا کرنے کی صلاحیت پر توجہ</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2 data-lang="en">Real-time Sensor Applications</h2>
+      <h2 data-lang="hi" class="lang-hidden">रीयल-टाइम सेंसर अनुप्रयोग</h2>
+      <h2 data-lang="ur" class="lang-hidden">ریئل ٹائم سینسر ایپلیکیشنز</h2>
+      
+      <ul data-lang="en">
+        <li>Students analyze environmental sensor data for real-world dashboards</li>
+        <li>Live data uploads to cloud platforms to build full pipelines</li>
+        <li>Use cases: Smart agriculture, health monitoring, smart industry</li>
+        <li>Prepares students for roles in health tech, automation, and sustainability</li>
+      </ul>
+      <ul data-lang="hi" class="lang-hidden">
+        <li>छात्र वास्तविक-विश्व डैशबोर्ड के लिए पर्यावरणीय सेंसर डेटा का विश्लेषण करते हैं</li>
+        <li>पूर्ण पाइपलाइन बनाने के लिए क्लाउड प्लेटफॉर्म पर लाइव डेटा अपलोड</li>
+        <li>उपयोग के मामले: स्मार्ट कृषि, स्वास्थ्य निगरानी, स्मार्ट उद्योग</li>
+        <li>छात्रों को स्वास्थ्य तकनीक, स्वचालन और स्थिरता में भूमिकाओं के लिए तैयार करता है</li>
+      </ul>
+      <ul data-lang="ur" class="lang-hidden">
+        <li>طلباء حقیقی دنیا کے ڈیش بورڈز کے لیے ماحولیاتی سینسر ڈیٹا کا تجزیہ کرتے ہیں</li>
+        <li>مکمل پائپ لائنز بنانے کے لیے کلاؤڈ پلیٹ فارمز پر لائیو ڈیٹا اپ لوڈ</li>
+        <li>استعمال کی مثالیں: سمارٹ زراعت، صحت کی نگرانی، سمارٹ انڈسٹری</li>
+        <li>طلباء کو صحت ٹیک، آٹومیشن، اور پائیداری میں کردار کے لیے تیار کرتا ہے</li>
+      </ul>
+    </section>
+  </main>
+  <footer>
+    <p data-lang="en">
+      Developer: Akash Gupta | 
+      <a href="https://www.linkedin.com/in/saysky2" target="_blank">LinkedIn</a> | 
+      <a href="https://github.com/saysky2" target="_blank">GitHub</a>
+    </p>
+    <p data-lang="en">Under the Supervision of <strong>Dr. Shan E Fatima</strong></p>
+    <p data-lang="hi" class="lang-hidden">
+      डेवलपर: आकाश गुप्ता | 
+      <a href="https://www.linkedin.com/in/saysky2" target="_blank">LinkedIn</a> | 
+      <a href="https://github.com/saysky2" target="_blank">GitHub</a>
+    </p>
+    <p data-lang="hi" class="lang-hidden"><strong>डॉ. शान ई. फातिमा</strong> के पर्यवेक्षण में</p>
+    <p data-lang="ur" class="lang-hidden">
+      ڈیولپر: آکاش گپتا | 
+      <a href="https://www.linkedin.com/in/saysky2" target="_blank">LinkedIn</a> | 
+      <a href="https://github.com/saysky2" target="_blank">GitHub</a>
+    </p>
+    <p data-lang="ur" class="lang-hidden"><strong>ڈاکٹر شان ای فاطمہ</strong> کی نگرانی میں</p>
+  </footer>
+  <script>
+    let currentTheme = 'light';
+    let currentLang = 'en';
+
+    function toggleTheme() {
+      currentTheme = currentTheme === 'light' ? 'dark' : 'light';
+      document.body.setAttribute('data-theme', currentTheme);
+      
+      const btn = document.querySelector('.control-btn');
+      btn.innerHTML = currentTheme === 'light' ? '🌙 Dark' : '☀️ Light';
+    }
+
+    function changeLanguage(lang) {
+      currentLang = lang;
+      
+      // Hide all language elements
+      document.querySelectorAll('[data-lang]').forEach(el => {
+        el.classList.add('lang-hidden');
+      });
+      
+      // Show elements for selected language
+      document.querySelectorAll(`[data-lang="${lang}"]`).forEach(el => {
+        el.classList.remove('lang-hidden');
+      });
+    }
+
+    // Initialize
+    document.addEventListener('DOMContentLoaded', () => {
+      changeLanguage('en');
+    });
+  </script>
+</body>
+</html>

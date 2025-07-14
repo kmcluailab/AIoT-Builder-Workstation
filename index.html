@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,523 +6,127 @@
   <title>AI Innovation - AIoT Builder Workstation</title>
   <link rel="icon" type="image/png" href="Khwaja_Moinuddin_Chishti_Language_University_logo.png" />
   <style>
-    :root {
-      --bg-color: #f5f7fa;
-      --text-color: #333;
-      --header-bg: #283593;
-      --main-bg: #fff;
-      --accent-color: #1a237e;
-      --border-color: #ddd;
-      --shadow-color: rgba(0,0,0,0.2);
-    }
-
-    [data-theme="dark"] {
-      --bg-color: #1a1a1a;
-      --text-color: #e0e0e0;
-      --header-bg: #1e1e2e;
-      --main-bg: #2d2d2d;
-      --accent-color: #64b5f6;
-      --border-color: #444;
-      --shadow-color: rgba(0,0,0,0.5);
-    }
-
     body {
       font-family: 'Segoe UI', sans-serif;
-      background-color: var(--bg-color);
+      background-color: #f5f7fa;
       margin: 0;
-      color: var(--text-color);
-      transition: all 0.3s ease;
+      color: #333;
     }
-
-    .controls {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      z-index: 1000;
-      display: flex;
-      gap: 10px;
-    }
-
-.control-btn {
-  padding: 8px 16px;
-  border: 2px solid #ccc; /* outlined border */
-  border-radius: 12px;
-  background-color: #f9f9f9; /* light background */
-  color: #333;
-  font-weight: 500;
-  font-size: 14px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-  transition: all 0.2s ease;
-}
-.control-btn:hover {
-  background-color: #eee;
-  border-color: #999;
-}
-.language-select:hover {
-  border-color: #999;
-  background-color: #eee;
-}
-
-    .language-select {
-  padding: 8px 16px;
-  border: 2px solid #ccc;
-  border-radius: 12px;
-  background-color: #f9f9f9;
-  color: #333;
-  font-weight: 500;
-  font-size: 14px;
-  cursor: pointer;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-  transition: all 0.2s ease;
-}
-
     header {
-      background-color: var(--header-bg);
+      background-color: #283593;
       color: white;
       padding: 20px 20px 20px 100px;
       text-align: center;
       position: relative;
       animation: slideInDown 1s ease;
     }
-
     header img.logo {
       position: absolute;
       top: 10px;
       left: 20px;
       height: 80px;
     }
-
     main {
       max-width: 1200px;
       margin: auto;
       padding: 2em;
-      background-color: var(--main-bg);
+      background-color: #fff;
       animation: fadeIn 1.5s ease-in;
-      min-height: calc(100vh - 200px);
     }
-
-    h1 {
-      margin: 0;
-      font-size: 2.5em;
-    }
-
     h2 {
-      color: var(--accent-color);
+      color: #1a237e;
       margin-top: 40px;
-      border-bottom: 2px solid var(--accent-color);
-      padding-bottom: 10px;
     }
-
     ul {
       padding-left: 20px;
     }
-
     li {
       margin-bottom: 10px;
-      transition: background-color 0.3s ease;
-      padding: 5px;
-      border-radius: 5px;
     }
-
-    li:hover {
-      background-color: var(--bg-color);
-      padding-left: 10px;
-    }
-
-    .fade-in-img {
-      animation: fadeInImage 2s ease-in-out;
-      max-width: 90%;
-      height: auto;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px var(--shadow-color);
-      border: 4px solid var(--border-color);
-      transition: transform 0.3s ease;
-    }
-
-    .fade-in-img:hover {
-      transform: scale(1.02);
-    }
-
-    .lang-hidden {
-      display: none;
-    }
-
-    footer {
-      background-color: var(--header-bg);
-      color: white;
-      text-align: center;
-      padding: 30px 20px;
-      margin-top: 40px;
-    }
-
-    .developer-info {
-      max-width: 800px;
-      margin: 0 auto;
-    }
-
-    .developer-info h3 {
-      margin-bottom: 20px;
-      font-size: 1.5em;
-    }
-
-    .social-links {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      margin-top: 15px;
-      flex-wrap: wrap;
-    }
-
-    .social-link {
-      color: white;
-      text-decoration: none;
-      padding: 10px 20px;
-      border: 2px solid white;
-      border-radius: 25px;
-      transition: all 0.3s ease;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .social-link:hover {
-      background-color: white;
-      color: var(--header-bg);
-      transform: translateY(-2px);
-    }
-
     @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
-
     @keyframes slideInDown {
       from { transform: translateY(-100%); opacity: 0; }
       to { transform: translateY(0); opacity: 1; }
+    }
+      to { transform: translateY(0); opacity: 1; }
+    }
+      .fade-in-img {
+      animation: fadeInImage 2s ease-in-out;
     }
 
     @keyframes fadeInImage {
       from { opacity: 0; transform: scale(0.95); }
       to { opacity: 1; transform: scale(1); }
     }
-
-    @media (max-width: 768px) {
-      header {
-        padding: 20px;
-        text-align: center;
-      }
-
-      header img.logo {
-        position: static;
-        display: block;
-        margin: 0 auto 20px auto;
-      }
-
-      h1 {
-        font-size: 2em;
-      }
-
-      .controls {
-        position: static;
-        justify-content: center;
-        margin: 20px;
-      }
-
-      .social-links {
-        flex-direction: column;
-        align-items: center;
-      }
-    }
   </style>
 </head>
 <body>
-  <div class="controls">
-    <button class="control-btn" onclick="toggleDarkMode()">🌙 Dark</button>
-    <select class="language-select" onchange="changeLanguage(this.value)">
-      <option value="en">English</option>
-      <option value="hi">हिंदी</option>
-      <option value="ur">اردو</option>
-    </select>
-  </div>
-
   <header>
     <img src="Khwaja_Moinuddin_Chishti_Language_University_logo.png" alt="University Logo" class="logo">
-    <p data-lang="en">Khwaja Moinuddin Chishti Language University, Lucknow</p>
-    <p data-lang="hi" class="lang-hidden">ख्वाजा मोइनुद्दीन चिश्ती भाषा विश्वविद्यालय, लखनऊ</p>
-    <p data-lang="ur" class="lang-hidden">خواجہ معین الدین چشتی لینگویج یونیورسٹی، لکھنؤ</p>
-    <h1 data-lang="en">AI Innovation: AIoT Builder Workstation</h1>
-    <h1 data-lang="hi" class="lang-hidden">AI नवाचार: AIoT बिल्डर वर्कस्टेशन</h1>
-    <h1 data-lang="ur" class="lang-hidden">AI اختراع: AIoT بلڈر ورک سٹیشن</h1>
+    <h1>AI Innovation: AIoT Builder Workstation</h1>
   </header>
-
   <main>
     <div style="text-align: center; margin-bottom: 30px;">
-      <img src="Iot-WorkStation.jpg" alt="AIoT Builder Image" class="fade-in-img">
+      <img src="Iot-WorkStation.jpg" alt="AIoT Builder Image" class="fade-in-img" style="max-width: 90%; height: auto; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); border: 4px solid #ddd;">
     </div>
-
     <section>
-      <h2 data-lang="en">What is the AI–IoT Builder Workstation?</h2>
-      <h2 data-lang="hi" class="lang-hidden">AI–IoT बिल्डर वर्कस्टेशन क्या है?</h2>
-      <h2 data-lang="ur" class="lang-hidden">AI–IoT بلڈر ورک سٹیشن کیا ہے؟</h2>
-      
-      <p data-lang="en">
+      <h2>What is the AI–IoT Builder Workstation?</h2>
+      <p>
         The AI–IoT Builder Workstation is a powerful educational platform integrating Artificial Intelligence and Internet of Things. Built around the NVIDIA Jetson Nano, it offers students real-world experience in AI, sensor interfacing, and real-time data analysis.
-      </p>
-      <p data-lang="hi" class="lang-hidden">
-        AI–IoT बिल्डर वर्कस्टेशन एक शक्तिशाली शैक्षणिक प्लेटफॉर्म है जो आर्टिफिशियल इंटेलिजेंस और इंटरनेट ऑफ थिंग्स को एकीकृत करता है। NVIDIA Jetson Nano के आधार पर निर्मित, यह छात्रों को AI, सेंसर इंटरफेसिंग और रीयल-टाइम डेटा विश्लेषण में वास्तविक दुनिया का अनुभव प्रदान करता है।
-      </p>
-      <p data-lang="ur" class="lang-hidden">
-        AI–IoT بلڈر ورک سٹیشن ایک طاقتور تعلیمی پلیٹ فارم ہے جو مصنوعی ذہانت اور انٹرنیٹ آف تھنگس کو یکجا کرتا ہے۔ NVIDIA Jetson Nano کے گرد بنایا گیا، یہ طلباء کو AI، سینسر انٹرفیسنگ، اور ریئل ٹائم ڈیٹا تجزیہ میں حقیقی دنیا کا تجربہ فراہم کرتا ہے۔
       </p>
     </section>
 
     <section>
-      <h2 data-lang="en">Key Features</h2>
-      <h2 data-lang="hi" class="lang-hidden">मुख्य विशेषताएं</h2>
-      <h2 data-lang="ur" class="lang-hidden">اہم خصوصیات</h2>
-      
-      <ul data-lang="en">
+      <h2>Key Features</h2>
+      <ul>
         <li>Full-stack learning modules for AI, ML, NLP, and sensors using Python, C++, and R</li>
         <li>Real-time image processing & object detection with OpenCV & TensorFlow</li>
         <li>Environmental sensors for simulating smart systems: Temp, Humidity, CO₂, O₂, Dust</li>
         <li>Cloud integration with ThingSpeak for real-time monitoring</li>
       </ul>
-      <ul data-lang="hi" class="lang-hidden">
-        <li>Python, C++, और R का उपयोग करके AI, ML, NLP, और सेंसर के लिए फुल-स्टैक लर्निंग मॉड्यूल</li>
-        <li>OpenCV और TensorFlow के साथ रीयल-टाइम इमेज प्रोसेसिंग और ऑब्जेक्ट डिटेक्शन</li>
-        <li>स्मार्ट सिस्टम के सिमुलेशन के लिए पर्यावरणीय सेंसर: तापमान, आर्द्रता, CO₂, O₂, धूल</li>
-        <li>रीयल-टाइम मॉनिटरिंग के लिए ThingSpeak के साथ क्लाउड एकीकरण</li>
-      </ul>
-      <ul data-lang="ur" class="lang-hidden">
-        <li>Python، C++، اور R استعمال کرتے ہوئے AI، ML، NLP، اور سینسرز کے لیے فل سٹیک لرننگ ماڈیولز</li>
-        <li>OpenCV اور TensorFlow کے ساتھ ریئل ٹائم امیج پروسیسنگ اور آبجیکٹ ڈیٹیکشن</li>
-        <li>سمارٹ سسٹمز کی نقل کے لیے ماحولیاتی سینسرز: درجہ حرارت، نمی، CO₂، O₂، دھول</li>
-        <li>ریئل ٹائم مانیٹرنگ کے لیے ThingSpeak کے ساتھ کلاؤڈ انٹیگریشن</li>
-      </ul>
     </section>
 
     <section>
-      <h2 data-lang="en">Hardware Specifications</h2>
-      <h2 data-lang="hi" class="lang-hidden">हार्डवेयर विनिर्देश</h2>
-      <h2 data-lang="ur" class="lang-hidden">ہارڈویئر کی تفصیلات</h2>
-      
-      <ul data-lang="en">
+      <h2>Hardware Specifications</h2>
+      <ul>
         <li>128-core NVIDIA Maxwell GPU & Quad-core ARM Cortex-A57 CPU</li>
         <li>4GB RAM, 240GB SSD, 15-inch LED Display</li>
         <li>GPIO, I2C, SPI, UART interfaces for sensor/actuator expansion</li>
         <li>Webcam & HD video support for vision projects</li>
       </ul>
-      <ul data-lang="hi" class="lang-hidden">
-        <li>128-कोर NVIDIA Maxwell GPU और क्वाड-कोर ARM Cortex-A57 CPU</li>
-        <li>4GB RAM, 240GB SSD, 15-इंच LED डिस्प्ले</li>
-        <li>सेंसर/एक्चुएटर विस्तार के लिए GPIO, I2C, SPI, UART इंटरफेस</li>
-        <li>विजन प्रोजेक्ट्स के लिए वेबकैम और HD वीडियो समर्थन</li>
-      </ul>
-      <ul data-lang="ur" class="lang-hidden">
-        <li>128-کور NVIDIA Maxwell GPU اور کواڈ کور ARM Cortex-A57 CPU</li>
-        <li>4GB RAM، 240GB SSD، 15-انچ LED ڈسپلے</li>
-        <li>سینسر/ایکچویٹر توسیع کے لیے GPIO، I2C، SPI، UART انٹرفیسز</li>
-        <li>ویژن پروجیکٹس کے لیے ویب کیم اور HD ویڈیو سپورٹ</li>
-      </ul>
     </section>
 
     <section>
-      <h2 data-lang="en">Integrated AI Curriculum</h2>
-      <h2 data-lang="hi" class="lang-hidden">एकीकृत AI पाठ्यक्रम</h2>
-      <h2 data-lang="ur" class="lang-hidden">مربوط AI نصاب</h2>
-      
-      <ul data-lang="en">
+      <h2>Integrated AI Curriculum</h2>
+      <ul>
         <li>Core concepts: Supervised, Unsupervised, Reinforcement Learning</li>
         <li>Projects: Classification, Regression, Clustering, NLP, Image Recognition</li>
         <li>Tools: CNNs, RNNs, Transformers, Decision Trees implemented in live code</li>
         <li>Supports interdisciplinary collaboration and project-based learning</li>
       </ul>
-      <ul data-lang="hi" class="lang-hidden">
-        <li>मूलभूत अवधारणाएं: सुपरवाइज़्ड, अनसुपरवाइज़्ड, रीइनफोर्समेंट लर्निंग</li>
-        <li>प्रोजेक्ट्स: क्लासिफिकेशन, रिग्रेशन, क्लस्टरिंग, NLP, इमेज रिकॉग्निशन</li>
-        <li>टूल्स: CNNs, RNNs, Transformers, Decision Trees लाइव कोड में लागू</li>
-        <li>अंतःविषयक सहयोग और प्रोजेक्ट-आधारित शिक्षा का समर्थन</li>
-      </ul>
-      <ul data-lang="ur" class="lang-hidden">
-        <li>بنیادی تصورات: سپروائزڈ، انسپروائزڈ، ری انفورسمنٹ لرننگ</li>
-        <li>پروجیکٹس: کلاسیفیکیشن، ریگریشن، کلسٹرنگ، NLP، امیج ریکگنیشن</li>
-        <li>ٹولز: CNNs، RNNs، Transformers، Decision Trees لائیو کوڈ میں نافذ</li>
-        <li>بین الضابطہ تعاون اور پروجیکٹ پر مبنی تعلیم کی حمایت</li>
-      </ul>
     </section>
 
     <section>
-      <h2 data-lang="en">Hands-on Assignments</h2>
-      <h2 data-lang="hi" class="lang-hidden">प्रैक्टिकल असाइनमेंट्स</h2>
-      <h2 data-lang="ur" class="lang-hidden">عملی اسائنمنٹس</h2>
-      
-      <ul data-lang="en">
+      <h2>Hands-on Assignments</h2>
+      <ul>
         <li>20+ guided assignments including gesture, motion, emotion recognition</li>
         <li>YOLO object detection and linear regression projects via Jupyter Notebooks</li>
         <li>Focus on accuracy evaluation and reproducibility in AI research</li>
       </ul>
-      <ul data-lang="hi" class="lang-hidden">
-        <li>जेस्चर, मोशन, इमोशन रिकॉग्निशन सहित 20+ गाइडेड असाइनमेंट्स</li>
-        <li>Jupyter Notebooks के माध्यम से YOLO ऑब्जेक्ट डिटेक्शन और लिनियर रिग्रेशन प्रोजेक्ट्स</li>
-        <li>AI रिसर्च में सटीकता मूल्यांकन और पुनरुत्पादन पर फोकस</li>
-      </ul>
-      <ul data-lang="ur" class="lang-hidden">
-        <li>جیسچر، موشن، ایموشن ریکگنیشن سمیت 20+ گائیڈڈ اسائنمنٹس</li>
-        <li>Jupyter Notebooks کے ذریعے YOLO آبجیکٹ ڈیٹیکشن اور لینیئر ریگریشن پروجیکٹس</li>
-        <li>AI تحقیق میں درستگی کی تشخیص اور دوبارہ پیدا کرنے کی صلاحیت پر توجہ</li>
-      </ul>
     </section>
 
     <section>
-      <h2 data-lang="en">Real-time Sensor Applications</h2>
-      <h2 data-lang="hi" class="lang-hidden">रीयल-टाइम सेंसर एप्लीकेशन</h2>
-      <h2 data-lang="ur" class="lang-hidden">ریئل ٹائم سینسر ایپلیکیشنز</h2>
-      
-      <ul data-lang="en">
+      <h2>Real-time Sensor Applications</h2>
+      <ul>
         <li>Students analyze environmental sensor data for real-world dashboards</li>
         <li>Live data uploads to cloud platforms to build full pipelines</li>
         <li>Use cases: Smart agriculture, health monitoring, smart industry</li>
         <li>Prepares students for roles in health tech, automation, and sustainability</li>
       </ul>
-      <ul data-lang="hi" class="lang-hidden">
-        <li>छात्र वास्तविक दुनिया के डैशबोर्ड के लिए पर्यावरणीय सेंसर डेटा का विश्लेषण करते हैं</li>
-        <li>पूर्ण पाइपलाइन बनाने के लिए क्लाउड प्लेटफॉर्म पर लाइव डेटा अपलोड</li>
-        <li>उपयोग के मामले: स्मार्ट कृषि, स्वास्थ्य निगरानी, स्मार्ट उद्योग</li>
-        <li>छात्रों को हेल्थ टेक, ऑटोमेशन और सस्टेनेबिलिटी में भूमिकाओं के लिए तैयार करता है</li>
-      </ul>
-      <ul data-lang="ur" class="lang-hidden">
-        <li>طلباء حقیقی دنیا کے ڈیش بورڈز کے لیے ماحولیاتی سینسر ڈیٹا کا تجزیہ کرتے ہیں</li>
-        <li>مکمل پائپ لائنز بنانے کے لیے کلاؤڈ پلیٹ فارمز پر لائیو ڈیٹا اپ لوڈ</li>
-        <li>استعمال کی مثالیں: سمارٹ زراعت، صحت کی نگرانی، سمارٹ انڈسٹری</li>
-        <li>طلباء کو ہیلتھ ٹیک، آٹومیشن، اور پائیداری میں کردار کے لیے تیار کرتا ہے</li>
-      </ul>
     </section>
   </main>
-
-  <footer>
-    <p data-lang="en">
-      Developer: Akash Gupta | 
-      <a href="https://www.linkedin.com/in/saysky2" target="_blank">LinkedIn</a> | 
-      <a href="https://github.com/saysky2" target="_blank">GitHub</a>
-    </p>
-    <p data-lang="en">Under the Supervision of <strong>Dr. Shan E Fatima</strong></p>
-    <p data-lang="hi" class="lang-hidden">
-      डेवलपर: आकाश गुप्ता | 
-      <a href="https://www.linkedin.com/in/saysky2" target="_blank">LinkedIn</a> | 
-      <a href="https://github.com/saysky2" target="_blank">GitHub</a>
-    </p>
-    <p data-lang="hi" class="lang-hidden"><strong>डॉ. शान ई. फातिमा</strong> के पर्यवेक्षण में</p>
-    <p data-lang="ur" class="lang-hidden">
-      ڈیولپر: آکاش گپتا | 
-      <a href="https://www.linkedin.com/in/saysky2" target="_blank">LinkedIn</a> | 
-      <a href="https://github.com/saysky2" target="_blank">GitHub</a>
-    </p>
-    <p data-lang="ur" class="lang-hidden"><strong>ڈاکٹر شان ای فاطمہ</strong> کی نگرانی میں</p>
-  </footer>
-
-  <script>
-    // Dark mode toggle functionality
-    function toggleDarkMode() {
-      const body = document.body;
-      const currentTheme = body.getAttribute('data-theme');
-      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-      
-      body.setAttribute('data-theme', newTheme);
-      localStorage.setItem('theme', newTheme);
-      
-      // Update button text
-      const btn = document.querySelector('.control-btn');
-      btn.textContent = newTheme === 'dark' ? '☀️ Light' : '🌙 Dark';
-    }
-
-    // Language switching functionality
-    function changeLanguage(lang) {
-      // Hide all language elements
-      document.querySelectorAll('[data-lang]').forEach(el => {
-        el.classList.add('lang-hidden');
-      });
-      
-      // Show selected language elements
-      document.querySelectorAll(`[data-lang="${lang}"]`).forEach(el => {
-        el.classList.remove('lang-hidden');
-      });
-      
-      // Save language preference
-      localStorage.setItem('language', lang);
-    }
-
-    // Initialize theme and language on page load
-    document.addEventListener('DOMContentLoaded', function() {
-      // Initialize theme
-      const savedTheme = localStorage.getItem('theme') || 'light';
-      document.body.setAttribute('data-theme', savedTheme);
-      
-      const btn = document.querySelector('.control-btn');
-      btn.textContent = savedTheme === 'dark' ? '☀️ Light' : '🌙 Dark';
-      
-      // Initialize language
-      const savedLanguage = localStorage.getItem('language') || 'en';
-      const languageSelect = document.querySelector('.language-select');
-      languageSelect.value = savedLanguage;
-      changeLanguage(savedLanguage);
-      
-      // Add smooth scrolling for better UX
-      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-          e.preventDefault();
-          const target = document.querySelector(this.getAttribute('href'));
-          if (target) {
-            target.scrollIntoView({
-              behavior: 'smooth',
-              block: 'start'
-            });
-          }
-        });
-      });
-
-      // Add intersection observer for animations
-      const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-      };
-
-      const observer = new IntersectionObserver(function(entries) {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.style.animation = 'fadeIn 0.6s ease-out';
-          }
-        });
-      }, observerOptions);
-
-      // Observe all sections
-      document.querySelectorAll('section').forEach(section => {
-        observer.observe(section);
-      });
-    });
-
-    // Add keyboard shortcuts
-    document.addEventListener('keydown', function(e) {
-      // Ctrl/Cmd + D for dark mode toggle
-      if ((e.ctrlKey || e.metaKey) && e.key === 'd') {
-        e.preventDefault();
-        toggleDarkMode();
-      }
-      
-      // Ctrl/Cmd + L for language cycling
-      if ((e.ctrlKey || e.metaKey) && e.key === 'l') {
-        e.preventDefault();
-        const select = document.querySelector('.language-select');
-        const options = select.options;
-        const currentIndex = select.selectedIndex;
-        const nextIndex = (currentIndex + 1) % options.length;
-        select.selectedIndex = nextIndex;
-        changeLanguage(options[nextIndex].value);
-      }
-    });
-  </script>
 </body>
 </html>
